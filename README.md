@@ -1,1 +1,1 @@
-# AIIT4JG-ADC-Loesung
+# AIIT4JG-ADC
