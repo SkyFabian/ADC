@@ -144,7 +144,7 @@ static void AdcInit(void) {
 	// NOTE: This configuration samples ~5ms into data array. To get higher
 	//  values we would need bigger array or trigger ADC with timer.
 
-	__HAL_RCC_ADC2_CLK_ENABLE();
+	__HAL_RCC_ADC3_CLK_ENABLE();
 	/*##-1- Configure the ADC peripheral #######################################*/
 	adcHandle.Instance                   = ADC3;
 	adcHandle.Init.ClockPrescaler        = ADC_CLOCKPRESCALER_PCLK_DIV4;
