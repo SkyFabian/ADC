@@ -68,6 +68,7 @@ int main(void)
 	LCD_SetColors(LCD_COLOR_MAGENTA, LCD_COLOR_BLACK); // TextColor, BackColor
 	LCD_DisplayStringAtLineMode(39, "copyright xyz", CENTER_MODE);
 
+	adcInit();
 
 
 	/* Infinite loop */
@@ -76,9 +77,22 @@ int main(void)
 		//execute main loop every 100ms
 		HAL_Delay(100);
 
+		float voltage;
+		float temp;
 
+		voltage = adcPotiVoltage();
+		temp = InternTemperature();
+
+		LCD_SetTextColor(LCD_COLOR_WHITE);
+		LCD_SetFont(&Font12);
+
+		LCD_SetPrintPosition(20, 5);
+		printf("ADC1 = %.2fV", voltage);
+		LCD_SetPrintPosition(22, 5);
+		printf("Temp = %.2fC", temp);
 
 	}
+	return 0;
 }
 
 
